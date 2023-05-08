@@ -40,9 +40,9 @@ const Pagination = ({ page, total, itemsPerPage, onChange }) => {
             <Button onClick={handleChangePage}
                 value={currentPage + 1}
                 disabled={currentPage === totalPages}> {">"} </Button>{' '}
-                <Button onClick={handleChangePage}
-                        value={totalPages}
-                        disabled={currentPage === totalPages}>Ultima</Button>
+            <Button onClick={handleChangePage}
+                value={totalPages}
+                disabled={currentPage === totalPages}>Ultima</Button>
         </div>
     );
 };
