@@ -22,11 +22,27 @@ const Pagination = ({ page, total, itemsPerPage, onChange }) => {
 
     return (
         <div>
-            <Button onClick={handleChangePage} value={currentPage - 1} disabled={currentPage === 1}> {"<"} </Button>
+            <Button onClick={handleChangePage}
+                value={1}
+                disabled={currentPage === 1}>Primera</Button>{' '}
+            <Button onClick={handleChangePage}
+                value={currentPage - 1}
+                disabled={currentPage === 1}> {"<"} </Button>{' '}
             {pagesArray.map((pageNumber, i) => (
-                <Button key={i} onClick={handleChangePage} value={pageNumber} variant='primary' disabled={pageNumber === currentPage}>{pageNumber}</Button>
+                <>
+                    <Button key={i}
+                        onClick={handleChangePage}
+                        value={pageNumber}
+                        variant='primary'
+                        disabled={pageNumber === currentPage}>{pageNumber}</Button>{' '}
+                </>
             ))}
-            <Button onClick={handleChangePage} value={currentPage + 1} disabled={currentPage === totalPages}> {">"} </Button>
+            <Button onClick={handleChangePage}
+                value={currentPage + 1}
+                disabled={currentPage === totalPages}> {">"} </Button>{' '}
+                <Button onClick={handleChangePage}
+                        value={totalPages}
+                        disabled={currentPage === totalPages}>Ultima</Button>
         </div>
     );
 };
